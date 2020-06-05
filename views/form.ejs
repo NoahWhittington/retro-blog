@@ -1,0 +1,25 @@
+<%- include ("partials/header") -%>
+<div class="flx">
+    <div class="ui container">
+        <div class="ui inverted segment">
+            <form class="ui inverted form" action="/animeblog" method="POST" id="postForm">
+                <label>Title:</label>
+                <div class="field">
+                    <input type="text" name="blog[title]" placeholder="title" maxlength="16">
+                </div>
+                <label>Image URL:</label>
+                <div class="field">
+                    <input type="text" name="blog[image]" placeholder="image url">
+                </div>
+                <div class="field">
+                    <textarea name="blog[body]" rows="10" cols="60" placeholder="post here..."></textarea>
+                </div>
+                <div class="field">
+                    <input type="submit" class="ui green button" value="submit"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ("partials/footer") -%>
+

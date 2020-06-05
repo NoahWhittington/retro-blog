@@ -1,0 +1,21 @@
+<%- include ("partials/header") -%>
+<!-- If there is only one object in the array then for each doesn't work-->
+<div class="ui container">
+    <div class="organize-posts">
+        <div class="ui inverted segment">
+            <a href="/animeblog/new"><button class="fluid ui classic button">+ post</button></a>
+            <h1 class="ui row centered">Add more posts to populate the page!</h1>
+        <div class="post">
+            <a href="/animeblog/<%= blogs[0]._id %>">
+                <h2 class="header"><%= blogs[0].title %></h2>
+                <a href="/animeblog/<%= blogs[0]._id %>"><img class="ui large bordered image" src="<%= blogs[0].image %>" alt="<%=blogs[0].title %>" >
+                <h4 class="front-text"><%= blogs[0].created %></h4>
+                <h4 class="front-text"><%= blogs[0].body.substring(0, 50) %></h4>
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include ("partials/footer") -%>

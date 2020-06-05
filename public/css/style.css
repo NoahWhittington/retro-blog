@@ -1,0 +1,40 @@
+body{
+    background:url('https://avatarfiles.alphacoders.com/183/183810.png');
+    background-size: cover;
+}
+.flx{
+    margin-top: 5%;
+}
+.organize-posts{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.post{
+    margin:2%;
+    padding:15px;
+    border:5px solid #22a0b6;
+    background: #0c1f28;
+    color:#d1320a;
+    
+    border-radius: 10px;
+    font-size: 24px;
+}
+.header{
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #cb0c59;
+    font-family: 'Bangers', cursive;
+}
+.front-text{
+    text-align: center;
+    font-family: 'Cute Font', cursive;
+    font-size: 25px;
+    font-weight: bold;
+}
+.txt{
+    color:black;
+}

@@ -1,0 +1,18 @@
+<%- include ('../partials/header') -%>
+<h1 style="color:white; text-align: center;">New Comment</h1>
+<div class="ui container">
+    <div class="ui inverted segment">
+        <form class="ui form" action="/animeblog/<%= comment._id %>/comments" method="POST">
+            <div class="field">
+                <textarea name="comment[text]" rows="5" cols="50" placeholder="post here..."></textarea>
+            </div>
+            <div class="field">   
+                <input tpye="text" placeholder="name here" name="comment[name]">
+            </div>
+            <div class="field">
+                <input type="submit" class="ui green button" value="submit">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ('../partials/footer') -%>

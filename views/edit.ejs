@@ -1,0 +1,26 @@
+<%- include ("partials/header") -%>
+<div class="flx">
+    <div class="ui container">
+        <div class="ui inverted segment">
+            <h1>Edit form</h1>
+            <form class="ui inverted form" action="/animeblog/<%= blog._id %>?_method=PUT" method="POST" id="postForm">
+                <div class="field">
+                    <label>title:</label>
+                    <input type="text" name="blog[title]" placeholder="title" value="<%= blog.title %>" maxlength="16">
+                </div>
+                <div class="field">
+                    <label>image url:</label>
+                    <input type="text" name="blog[image]" placeholder="image url" value="<%= blog.image %>">
+                </div>
+                <div class="field">
+                    <textarea name="blog[body]" rows="10" cols="60" placeholder="post here..."><%= blog.body %></textarea>
+                </div>
+                <div class="field">
+                    <input type="submit" value="edit" class="ui submit green button"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ("partials/footer") -%>

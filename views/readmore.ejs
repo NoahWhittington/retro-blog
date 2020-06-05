@@ -1,0 +1,66 @@
+<%- include ("partials/header") -%>
+<div class="background">
+    <div class="ui grid container centered txt">
+        <div>
+            <h1 style="color:white; font-size:35px;font-weight:bold;"> <%= blog.title %></h1>
+                <div class='ui big'>
+            <h4 style="color:white; font-size: 10px;">Posted: <%= blog.created %></h4>
+                </div>
+                <img  class="ui centered jumbo image" src="<%= blog.image %>" alt="<%= blog.title %>">
+            <div class="ui hidden divider"></div>
+            <div class='ui inverted segment'>
+                <div class="ui container">
+                    <p style="color: white;word-wrap: break-word; font-size: 21px;"> <%= blog.body %></p>
+                </div>
+                <div class="ui hidden divider"></div>
+            <div class="ui grid container centered">
+                <a href="/animeblog/<%= blog._id %>/edit"><button class="ui yellow button">edit</button></a>
+                    <form action="/animeblog/<%= blog._id %>?_method=DELETE" method="POST">
+                        <button class="ui red button">delete</button>
+                    </form>
+            </div>
+            </div>
+            <div class="ui hidden divider"></div>
+                
+                <div class="ui divider"></div>
+                <div class='ui segment'>
+                    <h1 style="text-align: center;">Comments</h1>
+                    <a href="/animeblog/<%= blog._id %>/comments/new"><button class="ui green button">+ add comment </button></a>
+                    <hr>
+                    <% blog.comments.forEach(function(commentData){ %>
+                    <div class="ui comments">
+                        <div class="comment">
+                          <a class="avatar">
+                            <img src="https://www.gravatar.com/avatar/933285225d6a05a99fe35d72b38ff17e?s=186&r=g&d=mm">
+                          </a>
+                          <div class="content">
+                            <a class="author"> <%= commentData.name %><!--<%= blog.comments%> --></a>
+                            <div class="metadata">
+                              <div class="date"><%= commentData.created %></div>
+                              <div class="rating">
+                                <form style="display:flex; justify-content: end;" action="/animeblog/<%= blog._id  %>/comments?_method=DELETE" method="POST">
+                                    <input type="submit" class="ui red tiny button classic" value="x">
+                                </form>
+                              </div>
+                            </div>
+                            <div class="text">
+                              <%= commentData.text %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+             <!--   <form class="ui form">
+                    <div class="field">
+                        <input type="text" placeholder="comment...">
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="author" required>
+                    </div>
+                </form> -->
+        </div>
+    </div>
+</div>
+
+<%- include ("partials/footer") -%>

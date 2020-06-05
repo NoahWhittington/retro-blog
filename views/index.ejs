@@ -1,0 +1,23 @@
+<%- include ("partials/header") -%>
+<!-- If there is only one object in the array then for each doesn't work-->
+
+<div class="ui container">
+    <div class="organize-posts">
+        <div class="ui inverted segment">
+            <a href="/animeblog/new"><button class="fluid ui classic button">+ post</button></a>
+    <% blogs.forEach(function(data){ %>
+        <div class="post">
+            <a href="/animeblog/<%= data._id %>">
+                <h2 class="header"><%= data.title %></h2>
+                <a href="/animeblog/<%= data._id %>"><img class="ui large bordered image" src="<%= data.image %>" alt="<%=data.title%>>" >
+                <h4 class="front-text"><%= data.created %></h4>
+                <h4 class="front-text"><%= data.body.substring(0, 50)%></h4>
+            </a>
+        </div>
+    <% }) %>
+</div>
+</div>
+</div>
+
+
+<%- include ("partials/footer") -%>
